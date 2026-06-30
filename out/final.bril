@@ -1,0 +1,47 @@
+@main(): int {
+  v0: int = call @__cool_string_literal;
+  hello: int = id v0;
+  v1: int = call @__cool_string_literal;
+  name: int = id v1;
+  v2: int = call @__cool_string_literal;
+  ending: int = id v2;
+  v3: int = call @__cool_self;
+  v4: int = call @__cool_string_literal;
+  v5: int = call @IO.out_string v3 v4;
+  v6: int = call @__cool_self;
+  v7: int = call @IO.in_string v6;
+  name: int = id v7;
+  v8: int = call @__cool_self;
+  v9: int = id hello;
+  v10: int = id name;
+  v11: int = id ending;
+  v12: int = call @String.concat v10 v11;
+  v13: int = call @String.concat v9 v12;
+  v14: int = call @IO.out_string v8 v13;
+  ret v14;
+}
+
+@__cool_string_literal(): int {
+  res: int = const 0;
+  ret res;
+}
+
+@__cool_self(): int {
+  res: int = const 0;
+  ret res;
+}
+
+@String.concat(self_ptr: int, other_ptr: int): int {
+  res: int = const 0;
+  ret res;
+}
+
+@IO.out_string(self_ptr: int, str_ptr: int): int {
+  print str_ptr;
+  ret self_ptr;
+}
+
+@IO.in_string(self_ptr: int): int {
+  res: int = const 42;
+  ret res;
+}

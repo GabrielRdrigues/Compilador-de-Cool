@@ -1,0 +1,20 @@
+cd "/home/gabriel/Documents/U.F.F/Compiladores"
+
+mkdir -p out
+
+python3 -B - <<'PY' > out/final.json 2> out/semantic.log
+import contextlib
+import json
+import sys
+
+from semantic import analisar_arquivo
+from cool_to_bril import CoolToBrilCompiler
+
+arquivo = "codigo.txt"
+
+with contextlib.redirect_stdout(sys.stderr):
+    ast = analisar_arquivo(arquivo)
+
+bril = CoolToBrilCompiler(semantic_analyzer=ast).compile_program(ast)
+print(json.dumps(bril, indent=2))
+PY

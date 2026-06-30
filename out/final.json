@@ -1,0 +1,306 @@
+{
+  "functions": [
+    {
+      "name": "main",
+      "args": [],
+      "type": "int",
+      "instrs": [
+        {
+          "op": "call",
+          "dest": "v0",
+          "type": "int",
+          "funcs": [
+            "__cool_string_literal"
+          ]
+        },
+        {
+          "op": "id",
+          "dest": "hello",
+          "type": "int",
+          "args": [
+            "v0"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v1",
+          "type": "int",
+          "funcs": [
+            "__cool_string_literal"
+          ]
+        },
+        {
+          "op": "id",
+          "dest": "name",
+          "type": "int",
+          "args": [
+            "v1"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v2",
+          "type": "int",
+          "funcs": [
+            "__cool_string_literal"
+          ]
+        },
+        {
+          "op": "id",
+          "dest": "ending",
+          "type": "int",
+          "args": [
+            "v2"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v3",
+          "type": "int",
+          "funcs": [
+            "__cool_self"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v4",
+          "type": "int",
+          "funcs": [
+            "__cool_string_literal"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v5",
+          "type": "int",
+          "funcs": [
+            "IO.out_string"
+          ],
+          "args": [
+            "v3",
+            "v4"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v6",
+          "type": "int",
+          "funcs": [
+            "__cool_self"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v7",
+          "type": "int",
+          "funcs": [
+            "IO.in_string"
+          ],
+          "args": [
+            "v6"
+          ]
+        },
+        {
+          "op": "id",
+          "dest": "name",
+          "type": "int",
+          "args": [
+            "v7"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v8",
+          "type": "int",
+          "funcs": [
+            "__cool_self"
+          ]
+        },
+        {
+          "op": "id",
+          "dest": "v9",
+          "type": "int",
+          "args": [
+            "hello"
+          ]
+        },
+        {
+          "op": "id",
+          "dest": "v10",
+          "type": "int",
+          "args": [
+            "name"
+          ]
+        },
+        {
+          "op": "id",
+          "dest": "v11",
+          "type": "int",
+          "args": [
+            "ending"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v12",
+          "type": "int",
+          "funcs": [
+            "String.concat"
+          ],
+          "args": [
+            "v10",
+            "v11"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v13",
+          "type": "int",
+          "funcs": [
+            "String.concat"
+          ],
+          "args": [
+            "v9",
+            "v12"
+          ]
+        },
+        {
+          "op": "call",
+          "dest": "v14",
+          "type": "int",
+          "funcs": [
+            "IO.out_string"
+          ],
+          "args": [
+            "v8",
+            "v13"
+          ]
+        },
+        {
+          "op": "ret",
+          "args": [
+            "v14"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "__cool_string_literal",
+      "args": [],
+      "type": "int",
+      "instrs": [
+        {
+          "op": "const",
+          "dest": "res",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "op": "ret",
+          "args": [
+            "res"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "__cool_self",
+      "args": [],
+      "type": "int",
+      "instrs": [
+        {
+          "op": "const",
+          "dest": "res",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "op": "ret",
+          "args": [
+            "res"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "String.concat",
+      "args": [
+        {
+          "name": "self_ptr",
+          "type": "int"
+        },
+        {
+          "name": "other_ptr",
+          "type": "int"
+        }
+      ],
+      "type": "int",
+      "instrs": [
+        {
+          "op": "const",
+          "dest": "res",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "op": "ret",
+          "args": [
+            "res"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IO.out_string",
+      "args": [
+        {
+          "name": "self_ptr",
+          "type": "int"
+        },
+        {
+          "name": "str_ptr",
+          "type": "int"
+        }
+      ],
+      "type": "int",
+      "instrs": [
+        {
+          "op": "print",
+          "args": [
+            "str_ptr"
+          ]
+        },
+        {
+          "op": "ret",
+          "args": [
+            "self_ptr"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IO.in_string",
+      "args": [
+        {
+          "name": "self_ptr",
+          "type": "int"
+        }
+      ],
+      "type": "int",
+      "instrs": [
+        {
+          "op": "const",
+          "dest": "res",
+          "type": "int",
+          "value": 42
+        },
+        {
+          "op": "ret",
+          "args": [
+            "res"
+          ]
+        }
+      ]
+    }
+  ]
+}
