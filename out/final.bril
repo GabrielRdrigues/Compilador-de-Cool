@@ -1,0 +1,16 @@
+@main(): int {
+  v0: int = call @__cool_self;
+  v1: char = const 'A';
+  v2: int = call @IO.out_string v0 v1;
+  ret v2;
+}
+
+@__cool_self(): int {
+  res: int = const 0;
+  ret res;
+}
+
+@IO.out_string(self_ptr: int, x: char): int {
+  print x;
+  ret self_ptr;
+}

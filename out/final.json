@@ -1,0 +1,90 @@
+{
+  "functions": [
+    {
+      "name": "main",
+      "args": [],
+      "type": "int",
+      "instrs": [
+        {
+          "op": "call",
+          "dest": "v0",
+          "type": "int",
+          "funcs": [
+            "__cool_self"
+          ]
+        },
+        {
+          "op": "const",
+          "dest": "v1",
+          "type": "char",
+          "value": "A"
+        },
+        {
+          "op": "call",
+          "dest": "v2",
+          "type": "int",
+          "funcs": [
+            "IO.out_string"
+          ],
+          "args": [
+            "v0",
+            "v1"
+          ]
+        },
+        {
+          "op": "ret",
+          "args": [
+            "v2"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "__cool_self",
+      "args": [],
+      "type": "int",
+      "instrs": [
+        {
+          "op": "const",
+          "dest": "res",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "op": "ret",
+          "args": [
+            "res"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IO.out_string",
+      "args": [
+        {
+          "name": "self_ptr",
+          "type": "int"
+        },
+        {
+          "name": "x",
+          "type": "char"
+        }
+      ],
+      "type": "int",
+      "instrs": [
+        {
+          "op": "print",
+          "args": [
+            "x"
+          ]
+        },
+        {
+          "op": "ret",
+          "args": [
+            "self_ptr"
+          ]
+        }
+      ]
+    }
+  ]
+}
